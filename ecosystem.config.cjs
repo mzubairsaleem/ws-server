@@ -23,8 +23,8 @@ module.exports = {
       ref: 'origin/main',
       repo: 'https://github.com/mzubairsaleem/ws-server.git',
       path: '/opt/wss-server',
-      'pre-deploy': 'source ~/.nvm/nvm.sh && nvm use 16 && npm install -g pm2@latest',
-      'post-deploy': 'source ~/.nvm/nvm.sh  && npm install && pm2 reload ecosystem.config.cjs --env production',
+      'pre-deploy': 'source ~/.nvm/nvm.sh',
+      'post-deploy': 'source ~/.nvm/nvm.sh  && npm install && pm2 startOrRestart ecosystem.config.cjs --env production',
       'pre-setup': 'source ~/.nvm/nvm.sh && nvm use 16 && npm install -g pm2@latest && pm2 startup'
     }
   }
