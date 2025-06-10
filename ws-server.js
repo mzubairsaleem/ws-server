@@ -11,7 +11,6 @@ wss.on('connection', (ws) => {
         ws.send(JSON.stringify({ error: 'File not found' }));
         return;
       }
-
       const buffer = fs.readFileSync(filename);
       ws.send(buffer, { binary: true });
     } catch (err) {
