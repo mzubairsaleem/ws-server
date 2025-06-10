@@ -1,6 +1,7 @@
 module.exports = {
   apps: [{
-    script: 'ws-server',
+    name: 'ws-server',
+    script: 'ws-server.js',
     watch: false,
     autorestart: true,
     instances: -1, // Use -1 for cluster mode

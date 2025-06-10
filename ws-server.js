@@ -1,6 +1,5 @@
 import { WebSocketServer } from 'ws';
 import fs from 'fs';
-import path from 'path';
 
 const wss = new WebSocketServer({ port: 9099 });
 wss.on('connection', (ws) => {
