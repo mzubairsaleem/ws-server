@@ -1,7 +1,9 @@
+// dialer-ws-server.js
 import { WebSocketServer } from 'ws';
 import fs from 'fs';
 
 const wss = new WebSocketServer({ port: 9099 });
+
 wss.on('connection', (ws) => {
   ws.on('message', async (message) => {
     try {
@@ -10,6 +12,7 @@ wss.on('connection', (ws) => {
         ws.send(JSON.stringify({ error: 'File not found' }));
         return;
       }
+
       const buffer = fs.readFileSync(filename);
       ws.send(buffer, { binary: true });
     } catch (err) {
